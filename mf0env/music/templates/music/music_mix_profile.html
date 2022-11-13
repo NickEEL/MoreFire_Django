@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+        <title>Mix Profile</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>{{ mix_profile }}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="music_mix">
+
+    <div id="mc_player">
+        {{ mix_profile.mix_embed |safe }}
+    </div>
+    <ul class="no-bullets" id="mix_profile">
+
+        {% for g in genre %}
+            <li>Genre:<p>{{ g }}</p></li>
+        {% endfor %}
+
+        <li>Release date: <p>{{ mix_profile.release_date }}</p></li>
+        <li>Mixed by: <p>{{ mix_profile.dj }}</p></li>
+        {% if feat_artists %}
+            {% for f in feat_artists %}
+               <li>Featuring: <p>{{ f }}</p></li>
+            {% endfor %}
+        {% endif %}
+        <li>Recorded date: <p>{{ mix_profile.recorded_date }}</p></li>
+        <li>Info: <p>{{ mix_profile.mix_info }}</p></li>
+    </ul>
+
+</div>
+
+{% endblock %}

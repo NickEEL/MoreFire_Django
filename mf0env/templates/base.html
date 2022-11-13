@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="more fire, morefire, sound, sound system, dub, jungle, dub dave, bristol">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+        {% block head %}
+
+            <title>More Fire -templates/base</title>
+
+
+        {% endblock %}
+    </head>
+    <body class="bg_black_grill"  >
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <div>
+            <div>
+                <div>
+
+                    <main class="bg_woodside" >
+                        {% block body %}
+                            <div>
+                                {% include 'navbar.html' %}
+
+                            </div>
+                            <header class="bg_MFSS_RGG_fire" >
+                                {% block header %}
+                                {% endblock %}
+                            </header>
+
+                            <div>
+                                {% block content %}
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    </main>
+                </div>
+            </div>
+
+            <footer id="footer">
+                {% block footer %}
+                    <h6>More Fire Sound System: Copyright (c) {{ current_year }}</h6>
+                {% endblock %}
+            </footer>
+        </div>
+    </body>
+</html>

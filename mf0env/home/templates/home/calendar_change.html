@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/calendar.css' %}">
+        <title>Calendar</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>Calendar</h1>
+{% endblock %}
+
+{% block content %}
+
+<div id="cal_butt">
+    <center>
+        <a class="btn btn-dark left" href=" {% url 'calendar_ym' prev_month_year prev_month %}" align="left">Previous</a>
+            <a class="btn btn-dark center" role="button" href=" {% url 'home_calendar' %}" align="center" >Current</a>
+            <a class="btn btn-dark right" href=" {% url 'calendar_ym' next_month_year next_month %} " align="right">Next</a>
+     </center>
+</div>
+<div class="calendar">
+  <center>
+    {{ calendar }}
+  </center>  
+</div>
+<div id="enq_butt">
+    <center>
+        <a class="btn btn-dark" role="button" href=" {% url 'enquiries' %}" align="center" >Enquiries</a>
+    </center>
+</div>
+
+{% endblock %}

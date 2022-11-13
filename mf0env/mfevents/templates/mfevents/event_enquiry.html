@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+        <title>Event Enquiries</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>Event Enquiries</h1>
+{% endblock %}
+
+{% block content %}
+<div class="mfevents">
+    <center>
+        <div>
+            <section>
+                <p>
+                    More Fire Sound System is available for hire for private parties.
+                    Please fill out the form below.
+                </p>
+            </section>
+            <section>
+                 <form action="" method=POST>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit" class="btn btn-dark">
+                 </form>
+            </section>
+        </div>
+    </center>
+</div>
+{% endblock %}

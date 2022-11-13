@@ -1,0 +1,669 @@
+@font-face {
+
+    src: url('/static/font/Stencil Cargo Army.ttf') format('truetype');
+    font-family: SCA;
+    }
+
+/* headings and paragraph styles */
+/* headings styles */
+h1 {
+    width: 100%;
+    font-family: SCA;
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: white 3px 0 10px;
+    word-spacing: 5px;
+    padding: 1%;
+    background-color: white;
+
+    }
+
+
+h2 {
+    font-family: SCA;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    word-spacing: 5px;
+    padding: 1%;
+}
+
+h3 {
+    font-family: SCA;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    word-spacing: 5px;
+    padding: 0%;
+}
+
+h4 {
+    font-family: SCA;
+    color: black;
+    font-size: 14px;
+    text-align: left;
+    word-spacing: 5px;
+    padding: 0%;
+}
+
+
+
+p {
+    width: 90%;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: arial;
+    font-size: 12px;
+    color: black;
+    background-color: whitesmoke;
+}
+
+
+
+a {
+    font-family: arial;
+}
+
+
+
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  }
+
+
+/* backgroundimag classes */
+.bg_MFSS_RGG_fire {
+    background-image: url('/media/bg_images/MFSS_RGG_fire.png');
+    background-position: center;
+    background-size: 150%;
+    }
+
+.bg_woodside {
+    background-image: url('/media/bg_images/wood_side.JPG');
+    background-position: 50% 90%;
+    background-size: 150%;
+    }
+
+.bg_black_paint0 {
+    background-image: url('/media/bg_images/black_paint0.JPG');
+    background-position: center bottom;
+    background-size: 100%;
+    }
+
+.bg_black_grill {
+    background-image: url('/media/bg_images/black_grill.JPG');
+    background-position: center;
+    background-size: 100%;
+    }
+
+.bg_metal_grill {
+    background-image: url('/media/bg_images/metal_grill.JPG');
+    background-position: center;
+    background-size: 100%;
+    }
+
+
+
+/* base styles */
+
+body {
+    background-color: black;
+
+  }
+
+main {
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    margin-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: silver;
+}
+
+
+header {
+    width: 100%;
+    height: 10%;
+    margin-left: auto;
+    margin-right: auto;
+
+    top: 100px;
+}
+
+/*
+#header {
+
+    position: absolute;
+    top: 0;
+}*/
+
+footer {
+    text-align: center;
+    border: 2px solid-black;
+    width: 100%;
+    height: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: 100% 100%;
+    background-color: lightgrey;
+}
+
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    }
+
+
+
+
+/* home page */
+
+.home {
+    width: 100%
+    margin-top: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: grey;
+ }
+
+ .hm_info {
+    margin: 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    padding-bottom: 3%;
+    background-color: white;
+}
+
+
+img {
+    width: auto;
+    height: auto;
+    padding: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    }
+
+form img{
+
+  height: auto;
+  padding: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: orange;
+}
+
+
+
+.card-body img{
+  width: 200px;
+  padding: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: red;
+
+}
+
+
+
+.home_photo_img {
+    height: 300px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Bootstrap Card styles*/
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.card {
+    width: 18rem;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+
+#card_butt {
+    font-family: SCA;
+    font-size: 14px;
+    padding: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+
+
+.card-header h2 {
+    font-color: whitesmoke;
+    }
+
+
+/* music mixes list */
+.music_mix {
+
+    font-family: SCA;
+    font-color: whitesmoke;
+    width: 100%
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    padding-right: 9%;
+    padding-bottom: 10%;
+    background-image: url('/media/bg_images/wood_side.JPG');
+    background-position: 50% 90%;
+    background-size: 150%;
+    }
+
+
+
+.music_mix h3   {
+    font-family: SCA;
+    font-size: 16px;
+    word-spacing: 5px;
+    }
+
+
+
+.music_mix h4   {
+    font-family: SCA;
+    font-size: 14px;
+    font-color: whitesmoke;
+    word-spacing: 5px;
+    }
+
+
+
+/* music mix profile */
+#mc_player {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10%;
+    background-color: black;
+    }
+
+#mix_profile {
+    width: 100%;
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+    background-color: whitesmoke;
+}
+
+/* music track profile */
+#mt_player {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    background-color: black;
+    }
+
+/* mf events  */
+.mfevents {
+    font-family: SCA;
+    font-color: whitesmoke;
+    width: 100%
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    padding-bottom: 10%;
+    background-image: url('/media/bg_images/wood_side.JPG');
+    background-position: 50% 90%;
+    background-size: 150%;
+
+    }
+
+.mfevents h3   {
+    font-family: SCA;
+    font-size: 16px;
+    font-color: whitesmoke;
+    word-spacing: 5px;
+    }
+
+.mfevents h4   {
+    font-family: SCA;
+    font-size: 14px;
+    font-color: whitesmoke;
+    word-spacing: 5px;
+    }
+
+#cancelled {
+    font-family: SCA;
+    font-color: red;
+    word-spacing: 5px;
+    }
+
+
+.eventprofile {
+    font-family: SCA;
+    font-color: black;
+    width: 100%
+    margin: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: silver;
+    }
+
+
+#profile-table {
+    widtn: 100%;
+    padding: 1%;
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+#event-profile-img {
+    width: 100%;
+    padding: 5%;
+    margin: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    }
+
+.photos-galleries {
+    font-family: SCA;
+    font-color: whitesmoke;
+    width: 100%
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    padding-bottom: 10%;
+    background-image: url('/media/bg_images/wood_side.JPG');
+    background-position: 50% 90%;
+    background-size: 100%;
+    }
+
+.photos-galleries img {
+  height: auto;
+  padding: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+
+}
+
+#li-photo {
+    width: 100%
+    margin: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+    background-color: yellow;
+}
+
+.photo img {
+    width: 100%;
+    padding: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+    }
+
+
+.links {
+    width: 80%
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3%;
+    background-size: 3%;
+    background-color: whitesmoke;
+    }
+
+#links {
+    width: 80%
+    margin: 1%;
+    padding: 3%;
+    background-size: 3%;
+    background-color: orange;
+}
+
+
+#page-container {
+    position: relative;
+    min-heigt: 100vh;
+}
+
+.content-wrap {
+    padding-bottom: 10%;
+}
+
+
+
+
+@media only screen and (max-width: 280px) {
+
+
+    main {
+        width: 90%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30%;
+        margin-bottom: 10%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        background-color: green;
+    }
+
+    img {
+       width: auto;
+       height: 200px;
+
+       }
+
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+    body {
+      background-color: black;
+
+  }
+
+    main {
+        width: 90%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15%;
+        padding-top: 0%;
+        background-color: grey;
+
+    }
+
+    h1 {
+
+        font-size: 72px;
+        background-size: 120%;
+        }
+
+
+    p {
+      font-size: 14px;
+      }
+
+
+
+    .home_photo_img {
+      height: 500px;
+      width: 100%;
+      margin: 3%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 5%;
+
+    }
+
+    form img{
+
+        height: auto;
+        padding: 2%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: green;
+      }
+
+  /*    .card-body img{
+        width: 200px;
+        padding: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: red;
+
+      }*/
+
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+    body {
+        background-color: black;
+    }
+
+    main {
+      width: 90%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5%;
+      padding-top: 0%;
+      background-color: grey;
+    }
+
+    h1 {
+
+        font-size: 80px;
+        margin-top: 1%;
+        background-size: 120%;
+        }
+
+    h2 {
+        font-family: SCA;
+        color: black;
+        font-size: 33px;
+        text-align: center;
+        word-spacing: 5px;
+        margin: 1%;
+        padding: 1%;
+      }
+
+
+    p {
+      font-size: 16px;
+      }
+
+    ul.no-bullets2col {
+      list-style-type: none;
+      margin: 1%;
+      padding: 1%;
+      columns: 2;
+      -webkit-columns:2;
+      -moz-columns:2;
+      background-color: white;
+      }
+
+
+
+    .home_photo_img {
+      height: 500px;
+      width: auto;
+      margin: 1%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 3%;
+
+    }
+
+    form img{
+        height: auto;
+        padding: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: green;
+      }
+
+    #li-photo {
+          width: 100%
+          padding: 3%;
+          background-color: yellow;
+      }
+
+    .eventprofile {
+        font-family: SCA;
+        font-size: 20px;
+
+        width: 100%
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        background-color: silver;
+        }
+
+
+    #profile-table {
+        widtn: 100%;
+        padding: 1%;
+        margin: 1%;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+    #event-profile-img {
+        width: auto;
+        height: 100%
+        padding: 5%;
+        margin: 1%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: whitesmoke;
+        }
+
+      #card_butt {
+          font-family: SCA;
+          font-size: 18px;
+          padding: 1%;
+          margin-left: auto;
+          margin-right: auto;
+          }
+
+      .card {
+          width: 30%;
+          margin-left: auto;
+          margin-right: auto;
+          }
+
+      #card-header h2 {
+          font-size: 30px;
+
+          }
+
+}

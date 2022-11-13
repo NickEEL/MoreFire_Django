@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+        <title>Event</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>{{ event }}</h1>
+{% endblock %}
+
+
+{% block content %}
+<div >
+    <center>
+        <div>
+            <a href="{% url 'events-list' %}" class="btn btn-light" id="card_butt">Listings</a>
+            <a href="{% url 'past-events-list' %}" class="btn btn-light" id="card_butt">Past Events</a>
+        </div>
+
+        <div>
+            <div>
+                {% if event.event_image %}
+                    <img src="{{ event.event_image.url }}" id="event-profile-img"> </img>
+                {% endif %}
+            </div>
+            <div class="eventprofile" >
+            <div>
+                {% for genre in event.genre.all %}
+                    <h2>{{ genre.name}}</h2>
+                {% endfor %}
+            </div>
+
+
+            <div>
+                {% if event.finished %}
+                    <ul class="no-bullets">
+                        
+                        <li>Date: {{ event.start_dt.date }} </li>
+                        {% if venue_url %}
+                            <li>Venue: <a href="{{ venue_url }}" target="_blank">{{ event.venue }}</a> </li>
+                        {% else %}
+                            <li>Venue: <p> {{ event.venue }} </p></li>
+                        {% endif %}
+                        <li>Info: <p>{{ event.event_info }} </p></li>
+                    </ul>
+
+
+                {% else %}
+                    <ul class="no-bullets">
+                        {% if event.status == 'Cancelled' %}
+                            <li> Status: <h3 id="cancelled"> {{ event.status }}</h3> </li>
+                            <li>Info: <p> {{ event.event_info }}</p></li>
+                        {% else %}
+                        <li> Start: {{ event_start }} </li>
+                            <li>Finish: {{ event_finish }}</li>
+                            <li> Venue: <a href="{{ venue_url }}" target="_blank">{{ event.venue }}</a> </li>
+                            {% if event.event_url %}
+                                <li> Website: <a href="{{ event.event_url }}" target="_blank">{{ event.event_url }}</a> </li>
+                            {% endif %}
+                            {% if event.ticket_url %}
+                                <li> Ticket: <a href="{{ event.ticket_url }}" target="_blank" >{{ event.ticket_url }}</a> </li>
+                            {% endif %}
+                            <li>Info: <p> {{ event.event_info }}</p></li>
+                        {% endif %}
+                    </ul>
+
+                {% endif %}
+            </div>
+            <div id="profile-table">
+                <div class="container text-center">
+                     <div class="row justify-content-between">
+                         <div class="col-1">
+                            {% if selectas %}
+                                <table class="table">
+                                    <tr>
+                                        <th>Selectas</th>
+                                    </tr>
+
+                                    {% for s in selectas %}
+                                        <tr>
+                                            <td>
+                                                <p>{{ s.name }}</p>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            {% endif %}
+                         </div>
+                         <div class="col-2">
+                            {% if vocals %}
+                                <table class="table">
+                                    <tr>
+                                        <th>Vocals</th>
+                                    </tr>
+
+                                    {% for v in vocals %}
+                                        <tr>
+                                            <td>
+                                                <p>{{ v.name }}</p>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            {% endif %}
+                         </div>
+                        <div class="col-3">
+                            {% if instrumentals %}
+                                <table class="table">
+                                    <tr>
+                                        <th>Live</th>
+                                    </tr>
+
+                                    {% for i in instrumentals %}
+                                        <tr>
+                                            <td>
+                                                <p>{{ i.name }}</p>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            {% endif %}
+                        </div>
+                     </div>
+                </div>
+                 <div >
+                    {% if event_galleries %}
+                        Photo Galleries
+                        {% for g in event_galleries %}
+                            <ul class="no-bullets">
+                                <li><a href="{% url 'gallery' g.id %}">{{ g }}</a></li>
+                            </ul>
+
+                        {% endfor %}
+                    {% endif %}
+                </div>
+              </div>
+            </div>
+        </div>
+    </center>
+</div>
+{% endblock %}

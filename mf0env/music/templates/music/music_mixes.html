@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+
+        <title>Mix List</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>More Fire Mixes</h1>
+{% endblock %}
+
+{% block content %}
+<div class="music_mix">
+    <center>
+        <nav aria-label="Mix list pages ">
+          <ul class="pagination pagination-sm justify-content-center">
+                {% if mix_list_page.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page1">&laquo First</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ events_list_page.has_previous_number }}">Previous</a></li>
+                {% endif %}
+
+
+                {% for i in nums %}
+                    -
+                    <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+                {% endfor %}
+
+                {% if mix_list_page.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ mix_list_page.next_page_number }}">next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ mix_list_page.paginator.num_pages }}">Last &raquo</a></li>
+                {% endif %}
+
+           </ul>
+        </nav>
+        <div>
+            <ul>
+                {% for mix in mix_list_page %}
+                    <div class="card text-bg-dark mb-3">
+                      <div class="card-header ">
+                          <h2 class="card-header">{{ mix }}</h2>
+                      </div>
+                      <div class="card-body">
+
+                        <p class="card-text">
+                            Date: {{ mix.release_date }} <br>
+                            {{ mix.mix_embed |safe }} <br>
+                        </p>
+
+                          <div >
+                                <a href="{% url 'mix-profile' mix.id %}" class="btn btn-light" id="card_butt" align="left">
+                                    mix profile
+                                </a>
+                                <a href="{{ mix.mix_url }}" class="btn btn-light" id="card_butt" target="_blank" align="right">
+                                    Go to Mixcloud
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
+        <nav aria-label="Mix list pages ">
+          <ul class="pagination pagination-sm justify-content-center">
+                {% if mix_list_page.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page1">&laquo First</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ events_list_page.has_previous_number }}">Previous</a></li>
+                {% endif %}
+
+
+                {% for i in nums %}
+                    -
+                    <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+                {% endfor %}
+
+                {% if mix_list_page.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ mix_list_page.next_page_number }}">next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ mix_list_page.paginator.num_pages }}">Last &raquo</a></li>
+                {% endif %}
+
+           </ul>
+        </nav>
+
+    </center>
+</div>
+
+
+
+{% endblock %}

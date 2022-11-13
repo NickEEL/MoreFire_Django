@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+<head xmlns="http://www.w3.org/1999/html">
+    {% block head %}
+        <title> Galleries</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>Photo Galleries</h1>
+{% endblock %}
+
+{% block content %}
+<div class="photos-galleries">
+    <div>
+        <nav aria-label="Page photo galleries list">
+          <ul class="pagination pagination-sm justify-content-center">
+
+                {% if photo_galleries_page.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page1">&laquo First</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ photo_galleries_page.has_previous_number }}">Previous</a></li>
+                {% endif %}
+
+                <!--
+                <li class="page-item disabled"><a href="#" >Page {{ events_list_page.number }} of {{ events_list_page.paginator.num_pages }}</a></li>
+                -->
+                {% for i in nums %}
+                    -
+                    <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+                {% endfor %}
+
+                {% if photo_galleries_page.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ photo_galleries_page.next_page_number }}">next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ photo_galleries_page.paginator.num_pages }}">Last &raquo</a></li>
+                {% endif %}
+
+           </ul>
+        </nav>
+    </div>
+    <div >
+      <center>
+        <ul class="no-bullets">
+            {% for gallery in photo_galleries_page %}
+                <div class="card text-bg-light mb-3">
+                    <div class="card-header">
+                        <h2>{{ gallery.name }}</h2>
+                    </div>
+                    <div class="card-body">
+                        {% if gallery.event %}
+                            {% if gallery.event.event_image %}
+                               <li>  <img src="{{ gallery.event.event_image.url }}" class="img-thumnail"></img> </li>
+                            {% endif%}
+                            <li>
+                                Event Date: {{ gallery.event.start_dt.date }}<br>
+                                <a href="{% url 'event-profile' gallery.event.id %}" class="btn btn-dark" id="card_butt" align="right">Event: {{ gallery.event.name }}</a>
+                            </li>
+                            <li>
+                                Gallery Created: {{ gallery.created_dt.date }}<br>
+                                <a href="{% url 'gallery' gallery.id %}" class="btn btn-dark" id="card_butt" align="right">Gallery: {{ gallery.name }}</a>
+                            </li>
+
+                        {% else %}
+                            <li>
+                                Gallery Created: {{ gallery.created_dt.date }}<br>
+                                <a href="{% url 'gallery' gallery.id %}" class="btn btn-dark" id="card_butt" align="right">Gallery: {{ gallery.name }}</a>
+                            </li>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+            {% endfor %}
+        </ul>
+        </center>
+     </div>
+    <div>
+        <nav aria-label="Page photo galleries list">
+          <ul class="pagination pagination-sm justify-content-center">
+
+                {% if photo_galleries_page.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page1">&laquo First</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ photo_galleries_page.has_previous_number }}">Previous</a></li>
+                {% endif %}
+
+                <!--
+                <li class="page-item disabled"><a href="#" >Page {{ events_list_page.number }} of {{ events_list_page.paginator.num_pages }}</a></li>
+                -->
+                {% for i in nums %}
+                    -
+                    <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+                {% endfor %}
+
+                {% if photo_galleries_page.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ photo_galleries_page.next_page_number }}">next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ photo_galleries_page.paginator.num_pages }}">Last &raquo</a></li>
+                {% endif %}
+
+           </ul>
+        </nav>
+    </div>
+</div>
+{% endblock %}

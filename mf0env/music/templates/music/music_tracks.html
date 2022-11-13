@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+        <title>Track List</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>More Fire Tracks</h1>
+{% endblock %}
+
+{% block content %}
+<div class="music_mix">
+    <center>
+        <nav aria-label="Track list pages ">
+          <ul class="pagination pagination-sm justify-content-center">
+                {% if mix_list_page.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page1">&laquo First</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ events_list_page.has_previous_number }}">Previous</a></li>
+                {% endif %}
+
+
+                {% for i in nums %}
+                    -
+                    <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+                {% endfor %}
+
+                {% if mix_list_page.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ mix_list_page.next_page_number }}">next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ mix_list_page.paginator.num_pages }}">Last &raquo</a></li>
+                {% endif %}
+
+           </ul>
+        </nav>
+
+    <div>
+        <ul>
+            {% for track in track_list_page %}
+                <div class="card text-bg-dark mb-3">
+                  <div class="card-header">
+                      <h2 class="card-header">{{ track }}</h2>
+                  </div>
+                  <div class="card-body">
+                      <p class="card-text">
+                            Date: {{ track.release_date }} <br>
+                            {{ track.track_embed |safe }} <br>
+                        </p>
+                      <div >
+                            <a href="{% url 'track_profile' track.id %}" class="btn btn-light" id="card_butt" align="left">
+                                track profile
+                            </a>
+                            <a href="{{ track.track_url }}" class="btn btn-light" id="card_butt" target="_blank" align="right">
+                                Go to Bandcamp
+                            </a>
+                      </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </ul>
+    </div>
+
+        <nav aria-label="Track list pages">
+          <ul class="pagination pagination-sm justify-content-center">
+
+
+                {% if track_list_page.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page1">&laquo First</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ tracks_list_page.has_previous_number }}">Previous</a></li>
+                {% endif %}
+
+
+                {% for i in nums %}
+                    -
+                    <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+                {% endfor %}
+
+                {% if track_list_page.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ tracks_list_page.next_page_number }}">next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ tracks_list_page.paginator.num_pages }}">Last &raquo</a></li>
+                {% endif %}
+
+           </ul>
+        </nav>
+    </center>
+</div>
+{% endblock %}

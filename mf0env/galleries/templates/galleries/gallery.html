@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<head>
+    {% block head %}
+        <title>Gallery</title>
+    {% endblock %}
+</head>
+{% block header %}
+
+{% endblock %}
+
+
+{% block content %}
+<div>
+    <header>
+        <h1>Gallery- {{ photo_gallery.name }}</h1>
+    </header>
+</div>
+<div class="photos-galleries">
+    <div>
+        <center>
+            <a href="{% url 'galleries' %}" class="btn btn-dark"  align="left">Photo Galleries</a>
+            <a href="{% url 'event-profile' photo_gallery.event.id %}" class="btn btn-dark"  align="right">Event: {{ photo_gallery.event }}</a>
+        </center>
+    </div>
+    <hr>
+
+    <div>
+        {% if photos %}
+            <ul class="no-bullets2col">
+                {% for photo in photos%}
+                    <div id="li-photo">
+                        <li>
+                            <a href="{% url 'photo' photo.gallery.id photo.id %}">
+                                <strong># {{ photo.id }}</strong><br>
+                                <img src="{{ photo.photo.url }}" class="img-thumnail" alt="{{ photo.id }}"></img>
+                            </a>
+                        </li>
+                    </div>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <hr>
+    <div>
+        <center>
+            <a href="{% url 'galleries' %}" class="btn btn-dark"  align="left">Photo Galleries</a>
+            <a href="{% url 'event-profile' photo_gallery.event.id %}" class="btn btn-dark"  align="right">Event: {{ photo_gallery.event }}</a>
+        </center>
+    </div>
+</div>
+{% endblock %}

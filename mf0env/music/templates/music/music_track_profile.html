@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+        <title>Track Profile</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>{{ track_profile }}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="music_mix">
+    <div id="mt_player">
+        {{ track_profile.track_embed |safe }}
+    </div>
+    <ul class="no-bullets" id="mix_profile">
+        {% for g in genre %}
+            <li>Genre:<p>{{ g }}</p></li>
+        {% endfor %}
+
+        {% if feat_artists %}
+            {% for f in feat_artists %}
+                <li>Featuring: <p>{{ f }}</p></li>
+            {% endfor %}
+        {% endif %}
+
+        <li>Produced by:<p>{{ track_profile.producer }}</p></li>
+        <li>Release date: <p>{{ track_profile.release_date }}</p></li>
+        <li>Released by:<p>{{ track_profile.label }}</p></li>
+        <li>Recorded at:<p>{{ track_profile.studio }}</p></li>
+        <li>Recorded date:<p>{{ track_profile.recorded_date }}</p></li>
+        <li>Info:<p>{{ track_profile.track_info }}</p></li>
+    </ul>
+
+
+
+</div>
+
+{% endblock %}

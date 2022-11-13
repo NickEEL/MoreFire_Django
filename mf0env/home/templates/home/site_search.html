@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+        <title>More Fire Search</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>Search Results</h1>
+{% endblock %}
+
+{% block content %}
+<div class="links">
+{% if searched %}
+    <div>
+        <ul class="no-bullets">
+            <p>Search Term: "{{ searched }}" </p>
+            {% if listings_srch %}
+                <div>
+                    <h4>Listings:</h4>
+                    {% for event in listings_srch %}
+                        <li>
+                            {{ event.start_dt }} -
+                            <a href="{% url 'event-profile' event.id %}">{{ event }} </a>
+                        </li>
+                    {% endfor %}
+                </div>
+                <hr>
+            {% endif %}
+
+            {% if past_events_srch %}
+                <div>
+                    <h4>Past Events Found:</h4>
+                    {% for event in past_events_srch %}
+                        <li>
+                            {{ event.start_dt.date }} -
+                            <a href="{% url 'event-profile' event.id %}">{{ event }} </a>
+                        </li>
+                    {% endfor %}
+                </div>
+                <hr>
+            {% endif %}
+
+            {% if mix_srch %}
+                <div>
+                    <h4>Mixes Found:</h4>
+                    {% for mix in mix_srch %}
+                        <li>
+                            {{ mix.release_date }} -
+                            <a href="{% url 'mix-profile' mix.id %}">{{ mix }} </a>
+                        </li>
+                    {% endfor %}
+                </div>
+                <hr>
+            {% endif %}
+
+            {% if track_srch %}
+                <div>
+                    <h4>Tracks Found:</h4>
+                    {% for track in track_srch %}
+                        <li>
+                            {{ track.release_date }} -
+                            <a href="{% url 'track_profile' track.id %}">{{ track }} </a>
+                        </li>
+                    {% endfor %}
+                </div>
+                <hr>
+            {% endif %}
+
+            {% if galleries_srch %}
+                <div>
+                    <h4>Photo Galleries Found:</h4>
+                    {% for gallery in galleries_srch %}
+                        <li>
+                            {{ gallery.created_dt }} -
+                            <a href="{% url 'gallery' gallery.id %}" ></a>
+                        </li>
+                    {% endfor %}
+                </div>
+                <hr>
+            {% endif %}
+
+            {% endif %}
+         </ul>
+    </div>
+</div>
+{% endblock %}

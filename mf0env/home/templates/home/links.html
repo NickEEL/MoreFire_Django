@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+        <title>Links</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1>Links</h1>
+{% endblock %}
+
+
+{% block content %}
+    <div class="links">
+        <section>
+            <ul>
+                {% if links_mf %}
+                    <h4>More Fire extra links</h4>
+                        {% for l in links_mf %}
+                            <li>
+                                <a href="{{ l.link_url.url }}" target="_blank">
+                                    {{ l.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    <hr>
+                {% endif %}
+
+                {% if links_fb %}
+                    <h4>Facebook links</h4>
+                        {% for l in links_fb %}
+                            <li>
+                                <a href="{{ l.link_url.url }}" target="_blank">
+                                    {{ l.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    <hr>
+                {% endif %}
+
+                {% if links_twit %}
+                    <h4>Twitter links</h4>
+                        {% for l in links_twit %}
+                            <li>
+                                <a href="{{ l.link_url.url }}" target="_blank">
+                                    {{ l.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    <hr>
+                {% endif %}
+
+                {% if links_other %}
+                    <h4>Other Interesting links</h4>
+                        {% for l in links_other %}
+                            <li>
+                                <a href="{{ l.link_url.url }}" target="_blank">
+                                    {{ l.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    <hr>
+                {% endif %}
+
+                {% if artist_all.artist_url %}
+                    <h4>Artist links</h4>
+                        {% for l in artist_all %}
+                            <li>
+                                <a href="{{ l.link_url.url }}" target="_blank">
+                                    {{ l.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    <hr>
+                {% endif %}
+
+                {% if soundsystem_all %}
+                    <h4>Sound System links</h4>
+                        {% for l in soundsystem_all %}
+                            <li>
+                                <a href="{{ l.link_url.url }}" target="_blank">
+                                    {{ l.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    <hr>
+                {% endif %}
+
+                {% if studio_all %}
+                    <h4>Studio links</h4>
+                        {% for l in studio_all %}
+                            <li>
+                                <a href="{{ l.link_url.url }}" target="_blank">
+                                    {{ l.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                        <hr>
+                    {% endif %}
+
+                    {% if eventcrew_all %}
+                        <h4>Event Crews links</h4>
+                            {% for l in eventcrew_all %}
+                                <li>
+                                    <a href="{{ l.link_url.url }}" target="_blank">
+                                        {{ l.name }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        <hr>
+                    {% endif %}
+            </ul>
+        </section>
+    </div>
+
+{% endblock %}

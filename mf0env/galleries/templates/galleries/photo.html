@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<head>
+    {% block head %}
+        <title>Photo</title>
+    {% endblock %}
+</head>
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+<div>
+    <header>
+        <h1>Photo # {{ photo.id }}</h1>
+    </header>
+</div>
+<div class="photos-galleries">
+    <div>
+        <center>
+            <a href="{% url 'gallery' photo.gallery.id %}" class="btn btn-dark"  align="left">Gallery: {{ gallery.name }}</a>
+            <a href="{% url 'event-profile' gallery.event.id %}" class="btn btn-dark"  align="right">Event: {{ gallery.event }}</a>
+        </center>
+    </div>
+    <hr>
+    <div class="photo">
+        <img src="{{ photo.photo.url }}" class="img-fluid" alt="{{ photo.id }}"></img>
+        <br>
+        <br>
+        <p>{{ photo.info }}</p>
+    </div>
+
+</div>
+{% endblock %}

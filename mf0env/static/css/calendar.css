@@ -1,0 +1,141 @@
+@font-face {
+
+    src: url('/static/font/Stencil Cargo Army.ttf') format('truetype');
+    font-family: SCA, arial;
+    }
+
+
+/* Calendar styles */
+
+.noday {
+    background-color: grey;
+}
+
+.calendar {
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3%;
+  }
+
+.calendar tr, td {
+  border: 1px solid grey;
+  color: grey;
+  font-family: arial;
+  text-align: top;
+  vertical-align: top;
+}
+
+.calendar th {
+  color: black;
+  padding: 1%;
+  vertical-align: top;
+  horizontal-align: top;
+  text-align: left;
+  }
+
+.calendar td {
+  color: grey;
+  width: 5%;
+  height: 5%;
+  padding: 1%;
+}
+
+.month {
+  font-family: SCA;
+  font-size: 20px;
+  text-align: centre;
+  color: grey;
+  padding-top: 3%;
+  background-color: whitesmoke;
+}
+
+.date {
+  font-family: arial;
+  font-size: 15px;
+  background-size: 3%;
+  background-color: whitesmoke;
+ }
+
+ .mon, .wed, .fri, .sun   {
+    font-family: SCA;
+    font-size: 16px;
+    background-color: whitesmoke;
+}
+
+.tue, .thu, .sat {
+    font-family: SCA;
+    font-size: 16px;
+    background-color: white;
+    }
+
+
+
+.mon_filled, .tue_filled, .wed_filled, .thu_filled, .fri_filled, .sat_filled, .sun_filled {
+    font-family: SCA;
+    font-size: 16px;
+    font-color: black;
+    background-color: yellow;
+}
+
+.mon_filled:hover, .tue_filled:hover, .wed_filled:hover, .thu_filled:hover, .fri_filled:hover, .sat_filled:hover, .sun_filled:hover {
+    font-family: SCA;
+    font-size: 16px;
+    font-color: black;
+    background-color: lime;
+    }
+
+
+
+ul {
+  height: auto;
+  width: 10%;
+  padding: 3px;
+  text-align: center;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #17a2b8;
+}
+
+
+#cal_butt {
+    font-family: SCA;
+    font-size: 20px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: whitesmoke;
+}
+
+
+#enq_butt {
+    font-family: SCA;
+    font-size: 20px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: whitesmoke;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    #cal_butt {
+      height: 5%;
+      padding: 1%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: whitesmoke;
+    }
+
+}

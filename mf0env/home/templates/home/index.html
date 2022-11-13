@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+<head>
+    {% block head %}
+        {% load static %}
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@{{5.0.3}}/dist/amplitude.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+        <title>More Fire</title>
+    {% endblock %}
+</head>
+{% block header %}
+  <h1 class="bg_MFSS_RGG_fire">More Fire Outernational</h1>
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        <section>
+          <center>
+            {% if photo_hm.hm_image %}
+                <img class="home_photo_img" src="{{ photo_hm.hm_image.url }}" alt="More Fire Sound"></img>
+            {% endif %}
+          </center>
+        </section>
+        <section class="hm_info">
+            <article>
+                <p>
+                    {{ info_hm.info }}
+                </p>
+            </article>
+        </section>
+    </div>
+{% endblock %}
