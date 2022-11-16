@@ -88,7 +88,7 @@ def basearg(request):
 
 def hmcalendar(request, year=current_year_utc, month=current_month_utc):
     mf_entries = CalendarEntry.objects.order_by('date').filter(
-        date__year=year, date__month=month).exclude(event__status='Plan')
+        date__year=year, date__month=month).exclude(event__status='Plan').exclude(event__status='Cancelled', event__finished=True )
 
     cal = MFCalendar(mf_entries).formatmonth(year, month)
 
@@ -142,7 +142,7 @@ def hmcalendarchangeview(request, year, month):
 
     #More Fire Events
     mf_entries = CalendarEntry.objects.order_by('date').filter(
-        date__year=year, date__month=month_number).exclude(event__status='Plan')
+        date__year=year, date__month=month_number).exclude(event__status='Plan').exclude(event__status='Cancelled', event__finished=True )
 
     cal = MFCalendar(mf_entries).formatmonth(year, month_number)
 

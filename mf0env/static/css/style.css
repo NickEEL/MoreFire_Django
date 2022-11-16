@@ -15,8 +15,10 @@ h1 {
     text-shadow: white 3px 0 10px;
     word-spacing: 5px;
     padding: 1%;
+    background-image: url('/media/bg_images/MFSS_RGG_fire.png');
+    background-position: center;
+    background-size: 150%;
     background-color: white;
-
     }
 
 
@@ -125,6 +127,7 @@ main {
     padding-top: 5%;
     padding-bottom: 5%;
     background-color: silver;
+    border: 3px solid black;
 }
 
 
