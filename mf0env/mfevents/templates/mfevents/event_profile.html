@@ -41,9 +41,9 @@
                         {% if venue_url %}
                             <li>Venue: <a href="{{ venue_url }}" target="_blank">{{ event.venue }}</a> </li>
                         {% else %}
-                            <li>Venue: <p> {{ event.venue }} </p></li>
+                            <li>Venue: <p><a> {{ event.venue }}</a> </p></li>
                         {% endif %}
-                        <li>Info: <p>{{ event.event_info }} </p></li>
+                        <li>Info: <p> <a>{{ event.event_info }}</a> </p></li>
                     </ul>
 
 
@@ -51,10 +51,10 @@
                     <ul class="no-bullets">
                         {% if event.status == 'Cancelled' %}
                             <li> Status: <h3 id="cancelled"> {{ event.status }}</h3> </li>
-                            <li>Info: <p> {{ event.event_info }}</p></li>
+                            <li>Info: <p><a> {{ event.event_info }} <a/></p></li>
                         {% else %}
-                        <li> Start: {{ event_start }} </li>
-                            <li>Finish: {{ event_finish }}</li>
+                        <li> Start: <a>{{ event_start }}</a> </li>
+                            <li>Finish: <a>{{ event_finish }} </a></li>
                             <li> Venue: <a href="{{ venue_url }}" target="_blank">{{ event.venue }}</a> </li>
                             {% if event.event_url %}
                                 <li> Website: <a href="{{ event.event_url }}" target="_blank">{{ event.event_url }}</a> </li>
@@ -62,7 +62,7 @@
                             {% if event.ticket_url %}
                                 <li> Ticket: <a href="{{ event.ticket_url }}" target="_blank" >{{ event.ticket_url }}</a> </li>
                             {% endif %}
-                            <li>Info: <p> {{ event.event_info }}</p></li>
+                            <li>Info: <p><a> {{ event.event_info }} </a></p></li>
                         {% endif %}
                     </ul>
 
@@ -81,7 +81,7 @@
                                     {% for s in selectas %}
                                         <tr>
                                             <td>
-                                                <p>{{ s.name }}</p>
+                                                <p><a>{{ s.name }}</a></p>
                                             </td>
                                         </tr>
                                     {% endfor %}
@@ -98,7 +98,7 @@
                                     {% for v in vocals %}
                                         <tr>
                                             <td>
-                                                <p>{{ v.name }}</p>
+                                                <p><a>{{ v.name }}</a></p>
                                             </td>
                                         </tr>
                                     {% endfor %}
@@ -115,7 +115,7 @@
                                     {% for i in instrumentals %}
                                         <tr>
                                             <td>
-                                                <p>{{ i.name }}</p>
+                                                <p><a>{{ i.name }}</a></p>
                                             </td>
                                         </tr>
                                     {% endfor %}

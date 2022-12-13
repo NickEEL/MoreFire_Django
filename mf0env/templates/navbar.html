@@ -2,11 +2,10 @@
 <head>{% load static %}
 <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}"></head>
 
-<nav class="navbar fixed-top navbar-expand-lg bg-light wrapper">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark wrapper">
     <div class="container-fluid">
-        <div>
-            <a class="navbar-brand" href="{% url 'home' %}">Home</a>
-
+        <div class="card-header">
+            <a class="navbar-brand" href="{% url 'home' %}"><h2 class="navbar_text">Home</h2></a>
         </div>
 
         <div>
@@ -18,43 +17,43 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
               <li>
-                <a class="navbar-brand" href="{% url 'home_calendar' %}">Calendar</a>
+                <a class="navbar-brand" href="{% url 'home_calendar' %}"><h2 class="navbar_text">Calendar</h2></a>
               </li>
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <h6>Music</h6>
+                <h2 class="navbar_text">Music</h2>
               </a>
               <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <a class="dropdown-item" href="{% url 'mixes' %}">Mixes</a>
+                    <a class="dropdown-item" href="{% url 'mixes' %}"><h3 class="navbar_text">Mixes</h3></a>
                   </li>
                   <li class="nav-item">
-                    <a class="dropdown-item" href="{% url 'tracks' %}">Tracks</a>
+                    <a class="dropdown-item" href="{% url 'tracks' %}"><h3 class="navbar_text">Tracks</h3></a>
                   </li>
               </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <h6>Events</h6>
+                <h2 class="navbar_text">Events</h2>
               </a>
               <ul class="dropdown-menu">
                   <li class="nav-item">
-                    <a class="dropdown-item" href="{% url 'events-list' %}">Listings</a>
+                    <a class="dropdown-item" href="{% url 'events-list' %}"><h3 class="navbar_text">Listings</h3></a>
                   </li>
                   <li class="nav-item">
-                    <a class="dropdown-item" href="{% url 'past-events-list' %}">Past Events</a>
+                    <a class="dropdown-item" href="{% url 'past-events-list' %}"><h3 class="navbar_text">Past Events</h3></a>
                   </li>
                   <li class="nav-item">
-                    <a class="dropdown-item" href="{% url 'enquiries' %}">Enquiries</a>
+                    <a class="dropdown-item" href="{% url 'enquiries' %}"><h3 class="navbar_text">Enquiries</h3></a>
                   </li>
               </ul>
             </li>
               <li>
-                <a class="navbar-brand" href="{% url 'galleries' %}">Photos</a>
+                <a class="navbar-brand" href="{% url 'galleries' %}"> <h2 class="navbar_text">Photos</h2></a>
               </li>
               <li>
-                <a class="navbar-brand" href="{% url 'links' %}">Links</a>
+                <a class="navbar-brand" href="{% url 'links' %}"><h2 class="navbar_text">Links</h2></a>
               </li>
           </ul>
 

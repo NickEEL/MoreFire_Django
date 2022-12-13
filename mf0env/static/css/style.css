@@ -1,7 +1,15 @@
 @font-face {
 
     src: url('/static/font/Stencil Cargo Army.ttf') format('truetype');
-    font-family: SCA;
+    /*src: url('/static/font/Exo2.0-Regular.oft') format('opentype');*/
+    font-family: SCA ;
+    }
+
+@font-face {
+
+    src: url('/static/font/Exo2.0-Regular.otf');
+    /*src: url('/static/font/Exo2.0-Regular.oft') format('opentype');*/
+    font-family: Exo2 ;
     }
 
 /* headings and paragraph styles */
@@ -12,7 +20,6 @@ h1 {
     color: black;
     font-size: 50px;
     text-align: center;
-    text-shadow: white 3px 0 10px;
     word-spacing: 5px;
     padding: 1%;
     background-image: url('/media/bg_images/MFSS_RGG_fire.png');
@@ -20,6 +27,14 @@ h1 {
     background-size: 150%;
     background-color: white;
     }
+
+.h1halo {
+  font-family: SCA;
+  color: white;
+  font-size: 55px;
+  text-align: center;
+  word-spacing: 5px;
+}
 
 
 h2 {
@@ -56,8 +71,8 @@ p {
     padding: 1%;
     margin-left: auto;
     margin-right: auto;
-    font-family: arial;
-    font-size: 12px;
+    font-family: Exo2;
+    font-size: 14px;
     color: black;
     background-color: whitesmoke;
 }
@@ -65,7 +80,8 @@ p {
 
 
 a {
-    font-family: arial;
+    font-family: Exo2;
+
 }
 
 
@@ -140,12 +156,52 @@ header {
     top: 100px;
 }
 
-/*
-#header {
+.nav-link .dropdown-toggle {
+    color: whitesmoke;
+}
 
-    position: absolute;
-    top: 0;
-}*/
+.navbar_text {
+    color: whitesmoke;
+    font-family: SCA;
+    padding-right: 30px;
+    }
+
+.navbar_text:hover {
+    color: grey;
+    }
+
+.nav-item {
+    background-color: whitesmoke;
+}
+
+.nav-link .dropdown-toggle:hover {
+    color: whitesmoke;
+}
+
+dropdown {
+    color: whitesmoke;
+}
+
+button .navbar-toggler-icon {
+  color: whitesmoke;
+}
+
+span .navbar-toggler-icon {
+  color: whitesmoke;
+}
+
+button .navbar-toggler {
+  color: whitesmoke;
+}
+
+.dropdown {
+  background-color: #212529;
+}
+
+.dropdown-menu {
+  background-color: #212529;
+}
+
 
 footer {
     text-align: center;
@@ -155,9 +211,13 @@ footer {
     margin-left: auto;
     margin-right: auto;
     background-size: 100% 100%;
-    background-color: lightgrey;
+    background-color: #212529;
 }
 
+footer h6 {
+  font-family: Exo2;
+  color: whitesmoke;
+}
 
 #footer {
     position: fixed;
@@ -213,6 +273,15 @@ form img{
   margin-left: auto;
   margin-right: auto;
   background-color: red;
+
+}
+
+.img-thumnail {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px
+
 
 }
 
@@ -410,12 +479,12 @@ form img{
 }
 
 #li-photo {
-    width: 100%
-    margin: 10%;
-    margin-left: auto;
-    margin-right: auto;
+    width: auto;
+    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding: 5%;
-    background-color: yellow;
+    background-color: whitesmoke;
 }
 
 .photo img {
@@ -479,6 +548,19 @@ form img{
 
        }
 
+    .img-thumnail {
+          display: block;
+          margin-left: auto;
+          margin-right: auto
+          width: 150px
+       }
+
+    #li-photo {
+         width: 175px;
+         padding: 3%;
+         background-color: whitesmoke;
+       }
+
 }
 
 
@@ -533,14 +615,18 @@ form img{
         background-color: green;
       }
 
-  /*    .card-body img{
-        width: 200px;
-        padding: 5%;
+      .img-thumnail {
+        display: block;
         margin-left: auto;
-        margin-right: auto;
-        background-color: red;
+        margin-right: auto
+        width: 500px
+      }
 
-      }*/
+      #li-photo {
+            width: 550px;
+            padding: 3%;
+            background-color: whitesmoke;
+        }
 
 }
 
@@ -590,7 +676,7 @@ form img{
       columns: 2;
       -webkit-columns:2;
       -moz-columns:2;
-      background-color: white;
+      background-color: none;
       }
 
 
@@ -614,9 +700,16 @@ form img{
       }
 
     #li-photo {
-          width: 100%
+          width: auto;
           padding: 3%;
-          background-color: yellow;
+          background-color: whitesmoke;
+      }
+
+      .img-thumnail {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+        width: 350px
       }
 
     .eventprofile {
