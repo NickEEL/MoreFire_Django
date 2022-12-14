@@ -4,11 +4,20 @@
     font-family: SCA, arial;
     }
 
+@font-face {
+
+    src: url('/static/font/Exo2.0-Regular.otf');
+    /*src: url('/static/font/Exo2.0-Regular.oft') format('opentype');*/
+    font-family: Exo2 ;
+    }
 
 /* Calendar styles */
 
 .noday {
-    background-color: grey;
+    /*background-color: grey;*/
+    background-image: url('/media/bg_images/metal_grill.JPG');
+    background-position: left;
+    background-size: 200%;
 }
 
 .calendar {
@@ -23,7 +32,7 @@
 .calendar tr, td {
   border: 1px solid grey;
   color: grey;
-  font-family: arial;
+  font-family: Exo2;
   text-align: top;
   vertical-align: top;
 }
@@ -41,6 +50,7 @@
   width: 5%;
   height: 5%;
   padding: 1%;
+
 }
 
 .month {

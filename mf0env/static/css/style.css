@@ -157,7 +157,7 @@ header {
 }
 
 .nav-link .dropdown-toggle {
-    color: whitesmoke;
+    color: green;
 }
 
 .navbar_text {
@@ -171,15 +171,16 @@ header {
     }
 
 .nav-item {
-    background-color: whitesmoke;
+    background-color: #212529;
 }
 
 .nav-link .dropdown-toggle:hover {
     color: whitesmoke;
 }
 
+
 dropdown {
-    color: whitesmoke;
+    color: green;
 }
 
 button .navbar-toggler-icon {
@@ -709,7 +710,7 @@ form img{
         display: block;
         margin-left: auto;
         margin-right: auto
-        width: 350px
+        width: 500px
       }
 
     .eventprofile {
