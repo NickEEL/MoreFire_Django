@@ -58,11 +58,11 @@ class Label(models.Model):
         return self.name
 
 
-#typo in contact_name, 'Studiol contact'. change in next update
+
 class Studio(models.Model):
     name = models.CharField('Studio Name', max_length=100, default='')
     location = models.CharField('Studio location', max_length=250, blank=True, null=True)
-    contact_name = models.CharField('Studiol contact', max_length=50, blank=True, null=True)
+    contact_name = models.CharField('Studio contact', max_length=50, blank=True, null=True)
     contact_phone = models.CharField('Studio phone number', max_length=15, blank=True, null=True)
     contact_email = models.EmailField('Studio email', blank=True, null=True)
     website = models.URLField('Studio web address', blank=True, null=True)

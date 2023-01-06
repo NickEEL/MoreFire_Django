@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.db.models import Q
-from datetime import datetime, timedelta
+from datetime import datetime, date, timedelta
 #from django.utils import timezone
 import pytz
 from pytz import timezone
@@ -95,6 +95,8 @@ def hmcalendar(request, year=current_year_utc, month=current_month_utc):
     #Previous & Next month calculation
     cal_month_name_lst = list(calendar.month_name)
     d = datetime.now(tz_uk)
+
+
     #Previous
     first = d.replace(day=1)
     prev_month_last_day = first - timedelta(days=1)
@@ -148,7 +150,9 @@ def hmcalendarchangeview(request, year, month):
 
     # Previous & Next month calculation
     cal_month_name_lst = list(calendar.month_name)
-    d = now.replace(month=month_number, day=15)
+
+    d = date(year=year, month=month_number, day=15)
+
     # Previous
     first = d.replace(day=1)
     prev_month_last_day = first - timedelta(days=1)
