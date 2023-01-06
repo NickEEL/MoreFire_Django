@@ -90,7 +90,7 @@ class Event(models.Model):
         return self.name
 
     @property
-    def Days_until(self):
+    def days_until(self):
         now = timezone.now()
         current_date = now.date()
         time_til = self.start_dt - now
@@ -113,7 +113,3 @@ class EventEnquiry(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
-

@@ -13,7 +13,7 @@ current_year = now.year
 # Create your views here.
 def galleries(request):
 
-    photo_galleries = Gallery.objects.all()
+    photo_galleries = Gallery.objects.order_by("pk").all()
 
     # pagination
     p = Paginator(photo_galleries, 10)
@@ -48,7 +48,7 @@ def gallery(request, gallery_id):
 
 def photo(request, gallery_id , photo_id):
     photo = Photo.objects.get(pk=photo_id)
-    photos = Photo.objects.filter(gallery__id=gallery_id)
+    photos = Photo.objects.filter(gallery__id=gallery_id).order_by('pk')
     photos_count = photos.count
     gallery = Gallery.objects.get(pk=gallery_id)
 

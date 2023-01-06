@@ -21,10 +21,5 @@ class Photo(models.Model):
     edited_dt = models.DateTimeField('Date edited', auto_now=True)
 
     def get_absolute_url(self):
-        k = { 'gallery': self.gallery, 'photo_id': self.id}
+        k = {'gallery': self.gallery, 'photo_id': self.id}
         return reverse('photo', kwargs=k)
-
-
-
-
-

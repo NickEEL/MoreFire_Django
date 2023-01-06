@@ -112,7 +112,7 @@ def events_list(request):
     args = {
         'events_list': events_list,
         'events_list_page': events_list_page,
-        'nums':nums,
+        'nums': nums,
         'current_year': current_year_utc,
     }
     return render(request, 'mfevents/event_list.html', args)

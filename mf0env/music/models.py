@@ -58,7 +58,7 @@ class Label(models.Model):
         return self.name
 
 
-
+#typo in contact_name, 'Studiol contact'. change in next update
 class Studio(models.Model):
     name = models.CharField('Studio Name', max_length=100, default='')
     location = models.CharField('Studio location', max_length=250, blank=True, null=True)
