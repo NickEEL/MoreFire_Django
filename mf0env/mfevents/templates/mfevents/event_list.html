@@ -38,36 +38,39 @@
 
         <div>
             <ul>
-                {% for event in events_list_page %}
-                   <div class="card text-bg-dark mb-3">
-                      <div class="card-header">
-                          <h2 class="card-header">{{ event }}</<h2><br>
-                          Countdown: {{ event.Days_until }}
-                      </div>
-                      <div class="card-body">
-                          <p class="card-text">
-                              <ul class="no-bullets">
-                                  {% if event.status == 'Cancelled' %}
-                                    <li><h3 id="cancelled">Status: {{ event.status }} </h3></li>
-                                    <li> Date: {{ event.start_dt.date }}</li>
-                                  {% else %}
-                                    <li>Date: {{ event.start_dt.date }}</li>
-                                    <li>Venue: {{ event.venue }} </li>
-                                        {% if event.ticket_url %}
-                                            <li> <a href="{{ event.ticket_url }}" target="_blank">Tickets</a> </li>
-                                        {% endif %}
-                              </ul>
-                          </p>
-                                    {% endif %}
-
+                {% if events_list_count > 0 %}
+                    {% for event in events_list_page %}
+                       <div class="card text-bg-dark mb-3">
+                          <div class="card-header">
+                              <h2 class="card-header">{{ event }}</h2><br>
+                              Countdown: {{ event.Days_until }}
                           </div>
-                       <div>
-                            <a href="{% url 'event-profile' event.id %}" class="btn btn-light" id="card_butt">{{ event }} Info</a>
-                            <hr>
-                       </div>
-                    </div>
+                          <div class="card-body">
+                              <p class="card-text">
+                                  <ul class="no-bullets">
+                                      {% if event.status == 'Cancelled' %}
+                                        <li><h3 id="cancelled">Status: {{ event.status }} </h3></li>
+                                        <li> Date: {{ event.start_dt.date }}</li>
+                                      {% else %}
+                                        <li>Date: {{ event.start_dt.date }}</li>
+                                        <li>Venue: {{ event.venue }} </li>
+                                            {% if event.ticket_url %}
+                                                <li> <a href="{{ event.ticket_url }}" target="_blank">Tickets</a> </li>
+                                            {% endif %}
+                                        {% endif %}
+                                  </ul>
+                              </p>
+                          </div>
+                           <div>
+                                <a href="{% url 'event-profile' event.id %}" class="btn btn-light" id="card_butt">{{ event }} Info</a>
+                                <hr>
+                           </div>
+                        </div>
 
-                {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    <p>Sorry, there are no events currently listed!</p>
+                {% endif%}
             </ul>
 
         </div>

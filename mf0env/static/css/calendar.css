@@ -14,10 +14,8 @@
 /* Calendar styles */
 
 .noday {
-    /*background-color: grey;*/
-    background-image: url('/media/bg_images/metal_grill.JPG');
-    background-position: left;
-    background-size: 200%;
+    background-color: whitesmoke;
+
 }
 
 .calendar {

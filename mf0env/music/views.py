@@ -6,6 +6,10 @@ from django.core.paginator import Paginator
 
 from .models import Artist, Label, Mix, Track
 
+# Global datetime variable.
+now = timezone.now()
+current_year = now.year
+
 # Create your views here.
 def music_mix_profile(request, mix_id):
     mix_profile = Mix.objects.get(pk=mix_id)
@@ -16,6 +20,7 @@ def music_mix_profile(request, mix_id):
         'mix_profile': mix_profile,
         'feat_artists': feat_artists,
         'genre': genre,
+        'current_year': current_year,
     }
     return render(request, 'music/music_mix_profile.html', args)
 
@@ -30,12 +35,12 @@ def music_track_profile(request, track_id):
         'track_profile': track_profile,
         'feat_artists': feat_artists,
         'genre': genre,
+        'current_year': current_year,
     }
     return render(request, 'music/music_track_profile.html', args)
 
 def music_mixes(request):
-    now = timezone.now()
-    current_year = now.year
+
     mix_list_all= Mix.objects.all().order_by('-release_date')
 
 
@@ -56,8 +61,7 @@ def music_mixes(request):
 
 
 def music_tracks(request):
-    now = timezone.now()
-    current_year = now.year
+
     track_list_all = Track.objects.all().order_by('-release_date')
 
     # pagination

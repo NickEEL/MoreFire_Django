@@ -34,20 +34,24 @@
         </nav>
         <div>
             <ul>
-                {% for event in events_list_past_page %}
-                   <div class="card text-bg-dark mb-3">
-                      <div class="card-header">
-                         <h2 class="card-header">{{ event }}</h2>
-                      </div>
-                      <div class="card-body">
-                            <p class="card-text">
-                                Date: <strong>{{ event.start_dt.date }}</strong><br>
-                                Venue: <strong>{{ event.venue }}</strong><br>
-                            </p>
-                        <a href="{% url 'event-profile' event.id %}" class="btn btn-light" id="card_butt">{{ event }} Info</a>
-                      </div>
-                    </div>
-                {% endfor %}
+                {% if events_list_past_count > 0 %}
+                    {% for event in events_list_past %}
+                       <div class="card text-bg-dark mb-3">
+                          <div class="card-header">
+                             <h2 class="card-header">{{ event }}</h2>
+                          </div>
+                          <div class="card-body">
+                                <p class="card-text">
+                                    Date: <strong>{{ event.start_dt.date }}</strong><br>
+                                    Venue: <strong>{{ event.venue }}</strong><br>
+                                </p>
+                            <a href="{% url 'event-profile' event.id %}" class="btn btn-light" id="card_butt">{{ event }} Info</a>
+                          </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Sorry, there are no events currently listed!</p>
+                {% endif %}
             </ul>
         </div>
 

@@ -102,6 +102,7 @@ def events_list(request):
             e.save()
 
     events_list = Event.objects.exclude(status='Plan').exclude(finished=True).order_by('start_dt')
+    events_list_count = events_list.count()
 
     # pagination
     p = Paginator(events_list, 3)
@@ -111,6 +112,7 @@ def events_list(request):
 
     args = {
         'events_list': events_list,
+        'events_list_count': events_list_count,
         'events_list_page': events_list_page,
         'nums': nums,
         'current_year': current_year_utc,
@@ -126,6 +128,7 @@ def past_events_list(request):
             e.save()
 
     events_list_past = Event.objects.filter(finished=True).filter(status='Scheduled').order_by('-finish_dt')
+    events_list_past_count = events_list_past.count()
 
     # pagination
     p = Paginator(events_list_past, 5)
@@ -134,7 +137,9 @@ def past_events_list(request):
     nums = "p" * events_list_past_page.paginator.num_pages
 
     args = {
-        'events_list_past_page': events_list_past,
+        'events_list_past': events_list_past,
+        'events_list_past_count': events_list_past_count,
+        'events_list_past_page': events_list_past_page,
         'nums': nums,
         'current_year': current_year_utc,
     }

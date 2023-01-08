@@ -12,7 +12,7 @@
 
 
 {% block content %}
-<div >
+<div>
     <center>
         <div>
             <a href="{% url 'events-list' %}" class="btn btn-light" id="card_butt">Listings</a>
@@ -37,7 +37,7 @@
                 {% if event.finished %}
                     <ul class="no-bullets">
 
-                        <li>Date: {{ event.start_dt.date }} </li>
+                        <li>Date: <a>{{ event.start_dt.date }} </a> </li>
                         {% if venue_url %}
                             <li>Venue: <a href="{{ venue_url }}" target="_blank">{{ event.venue }}</a> </li>
                         {% else %}
@@ -51,7 +51,7 @@
                     <ul class="no-bullets">
                         {% if event.status == 'Cancelled' %}
                             <li> Status: <h3 id="cancelled"> {{ event.status }}</h3> </li>
-                            <li>Info: <p><a> {{ event.event_info }} <a/></p></li>
+                            <li>Info: <p> <a> {{ event.event_info }} </a> </p></li>
                         {% else %}
                         <li> Start: <a>{{ event_start }}</a> </li>
                             <li>Finish: <a>{{ event_finish }} </a></li>
