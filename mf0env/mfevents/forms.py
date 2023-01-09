@@ -9,17 +9,15 @@ class EventEnquiryForm(forms.ModelForm):
 
     class Meta:
         model = EventEnquiry
-        fields = ('name','email','phone','message')
+        fields = ('name','email','message')
         labels = {
             'name':'',
             'email':'',
-            'phone':'',
             'message':'',
         }
 
         widgets = {
             'name':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter your name.' }),
             'email':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter your email address.'}),
-            'phone':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter your phone (optional).'}),
             'message':forms.Textarea(attrs={'class':'form-control', 'placeholder':'Enter details of your enquiry here please.'}),
         }

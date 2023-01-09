@@ -1,6 +1,6 @@
 from django.shortcuts import render, reverse
 from django.http import HttpResponseRedirect
-#from django.utils import timezone
+from django.core.mail import send_mail
 from django.utils.safestring import mark_safe
 from django.core.paginator import Paginator
 import calendar
@@ -8,7 +8,7 @@ from calendar import HTMLCalendar
 from datetime import datetime, timedelta
 from pytz import timezone
 import pytz
-from .models import Event
+from .models import Event, EventEnquiry
 from music.models import Track
 from .forms import EventEnquiryForm
 from galleries.models import Gallery, Photo
@@ -73,6 +73,7 @@ def event_enquiry(request):
             human = True
             form.save()
             return HttpResponseRedirect(reverse('enquiry-success'))
+
     else:
         form = EventEnquiryForm
         if 'submitted' in request.GET:
@@ -90,7 +91,21 @@ def event_enquiry(request):
 
 
 def enquiry_success(request):
-    return render(request, 'mfevents/event_enquiry_success.html')
+    enq = EventEnquiry.objects.last()
+
+    # send an email
+    send_mail(
+        'More Fire Enquiry-' + enq.name,  # subject
+        enq.message, # message
+        enq.email, # from email
+        ['morefireproductions@email.com'], #To email
+    )
+
+    args = {
+        'current_year': current_year_utc,
+    }
+
+    return render(request, 'mfevents/event_enquiry_success.html', args)
 
 
 

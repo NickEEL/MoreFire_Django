@@ -106,7 +106,6 @@ class Event(models.Model):
 class EventEnquiry(models.Model):
     name = models.CharField('Name',max_length=50)
     email = models.EmailField('Email', blank=True, null=True)
-    phone = models.CharField('Phone number',max_length=15, blank=True, null=True)
     message = models.CharField('Message', max_length=300)
     created_dt =models.DateTimeField('Date created', auto_now_add=True)
     edited_dt = models.DateTimeField('Date edited', auto_now=True)

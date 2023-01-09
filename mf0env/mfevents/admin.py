@@ -25,6 +25,6 @@ class EventAdmin(admin.ModelAdmin):
 
 @admin.register(EventEnquiry)
 class EventEnquiryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'phone')
+    list_display = ('name', 'email')
     ordering = ('created_dt',)
 #admin.site.register(EventEnquiry)
