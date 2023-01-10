@@ -93,9 +93,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mf0db',
         'USER': 'postgres',
-        'PASSWORD': 'pg_c0bblers',
+        'PASSWORD': config('PASSWORD'),
         'HOST': 'localhost',
-        'PORT': 5433,
+        'PORT': config('PORT', cast=int),
     }
 }
 
