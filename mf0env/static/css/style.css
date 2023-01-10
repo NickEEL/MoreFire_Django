@@ -59,7 +59,7 @@ h4 {
     font-family: SCA;
     color: black;
     font-size: 14px;
-    text-align: left;
+    text_align: center;
     word-spacing: 5px;
     padding: 0%;
 }
@@ -69,6 +69,7 @@ h4 {
 p {
     width: 90%;
     padding: 1%;
+    text_align: center;
     margin-left: auto;
     margin-right: auto;
     font-family: Exo2;
@@ -531,42 +532,47 @@ form img{
 @media only screen and (max-width: 280px) {
 
 
-    main {
-        width: 90%;
-        height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50%;
-        margin-bottom: 10%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        background-color: green;
-    }
+main {
+    width: 90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+    margin-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: green;
+}
 
-    img {
-       width: auto;
-       height: 200px;
+p {
+    text_align: center;
+    font-size: 16px;
+  }
 
-       }
+img {
+   width: auto;
+   height: 200px;
 
-    .img-thumnail {
-          display: block;
-          margin-left: auto;
-          margin-right: auto
-          width: 150px
-       }
+   }
 
-    #li-photo {
-         width: 175px;
-         padding: 3%;
-         background-color: whitesmoke;
-       }
+.img-thumnail {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+      width: 150px
+   }
 
-     footer h6 {
-       font-family: Exo2;
-       font-size: 10px;
-       color: whitesmoke;
-     }
+#li-photo {
+     width: 175px;
+     padding: 3%;
+     background-color: whitesmoke;
+   }
+
+ footer h6 {
+   font-family: Exo2;
+   font-size: 10px;
+   color: whitesmoke;
+ }
 
 }
 
@@ -598,7 +604,8 @@ form img{
 
 
     p {
-      font-size: 14px;
+        text_align: center;
+        font-size: 14px;
       }
 
 
@@ -673,7 +680,8 @@ form img{
 
 
     p {
-      font-size: 16px;
+        text_align: center;
+        font-size: 16px;
       }
 
     ul.no-bullets2col {
