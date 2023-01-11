@@ -1,16 +1,20 @@
+{% load static %}
+
+
 @font-face {
 
     src: url('/static/font/Stencil Cargo Army.ttf') format('truetype');
-    /*src: url('/static/font/Exo2.0-Regular.oft') format('opentype');*/
     font-family: SCA ;
     }
 
 @font-face {
 
-    src: url('/static/font/Exo2.0-Regular.otf');
-    /*src: url('/static/font/Exo2.0-Regular.oft') format('opentype');*/
+    src: url('/static/font/Exo20-Regular.otf');
     font-family: Exo2 ;
     }
+
+
+
 
 /* headings and paragraph styles */
 /* headings styles */
@@ -107,11 +111,13 @@ ul.no-bullets {
     background-size: 150%;
     }
 
+/*
 .bg_black_paint0 {
     background-image: url('/media/bg_images/black_paint0.JPG');
     background-position: center bottom;
     background-size: 100%;
     }
+*/
 
 .bg_black_grill {
     background-image: url('/media/bg_images/black_grill.JPG');
@@ -119,13 +125,14 @@ ul.no-bullets {
     background-size: 100%;
     }
 
+/*
 .bg_metal_grill {
     background-image: url('/media/bg_images/metal_grill.JPG');
     background-position: center;
     background-size: 100%;
     }
 
-
+*/
 
 /* base styles */
 

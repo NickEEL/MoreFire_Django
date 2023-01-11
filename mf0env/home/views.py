@@ -198,10 +198,10 @@ def site_search(request):
     if request.method == "POST":
         searched = request.POST['searched']
         #Q query expressions
-        events_q = Q(name__contains=searched) | Q(venue__name__contains=searched) | Q(selectas__name__contains=searched) | Q(vocals__name__contains=searched) | Q(instrumentals__name__contains=searched) | Q(genre__name__contains=searched)
-        mix_q = Q(name__contains=searched) | Q(dj__name__contains=searched) | Q(featured_artists__name__contains=searched) | Q(genre__name__contains=searched)
-        track_q = Q(name__contains=searched) | Q(producer__name__contains=searched) | Q(featured_artists__name__contains=searched) | Q(label__name__contains=searched) | Q(studio__name__contains=searched) | Q(genre__name__contains=searched)
-        galleries_q = Q(name__contains=searched) | Q(event__name__contains=searched)
+        events_q = Q(name__icontains=searched) | Q(venue__name__icontains=searched) | Q(selectas__name__icontains=searched) | Q(vocals__name__icontains=searched) | Q(instrumentals__name__icontains=searched) | Q(genre__name__icontains=searched)
+        mix_q = Q(name__icontains=searched) | Q(dj__name__icontains=searched) | Q(featured_artists__name__icontains=searched) | Q(genre__name__icontains=searched)
+        track_q = Q(name__icontains=searched) | Q(producer__name__icontains=searched) | Q(featured_artists__name__icontains=searched) | Q(label__name__icontains=searched) | Q(studio__name__icontains=searched) | Q(genre__name__icontains=searched)
+        galleries_q = Q(name__icontains=searched) | Q(event__name__icontains=searched)
 
         #Search filters
         listings_srch = Event.objects.filter(events_q).exclude(status='Plan').exclude(finished=True).order_by('start_dt').distinct()

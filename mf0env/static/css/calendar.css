@@ -6,8 +6,8 @@
 
 @font-face {
 
-    src: url('/static/font/Exo2.0-Regular.otf');
-    /*src: url('/static/font/Exo2.0-Regular.oft') format('opentype');*/
+    /*src: url('/static/font/Exo20-Regular.otf');*/
+    src: url('/static/font/Exo20-Regular.otf') format('opentype');
     font-family: Exo2 ;
     }
 
